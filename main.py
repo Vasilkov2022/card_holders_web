@@ -36,12 +36,18 @@ def card_type(type_name):
     sizes = [prec, 100 - prec]
 
     fig1, ax1 = plt.subplots()
-    ax1.pie(sizes, labels = labels, autopct='%1.1f%%')
+    ax1.pie(sizes, labels=labels, autopct='%1.1f%%')
     ax1.axis('equal')
-
+    st.pyplot.axes.set_facecolor(color=None)
     st.pyplot(fig1)
 
+
+
+st.subheader('The piechart shows the proportion of blue cards holders, who abandon the service of the bank')
 card_type('Blue')
+st.subheader('The piechart shows the proportion of silver cards holders, who abandon the service of the bank')
 card_type('Silver')
+st.subheader('The piechart shows the proportion of gold cards holders, who abandon the service of the bank')
 card_type('Gold')
+st.subheader('The piechart shows the proportion of platinum cards holders, who abandon the service of the bank')
 card_type('Platinum')
