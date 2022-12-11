@@ -21,3 +21,27 @@ fig = px.scatter(data, x="Customer_Age", y="Credit_Limit", color="Attrition_Flag
                  marginal_x="box", marginal_y="violin",
                   title="example")
 st.plotly_chart(fig)
+
+data[['Card_Category']].value_counts()
+cards_types = ['Blue', 'Silver', 'Gold', 'Platinum']
+
+def card_type(type_name):
+    blue_attrition = data[(data.Attrition_Flag == 'Attrited Customer') & (data.Card_Category == type_name)]
+    blue_at_c = blue_attrition.CLIENTNUM.count()
+    blue_exi = data[(data.Attrition_Flag == 'Existing Customer') & (data.Card_Category == type_name)]
+    blue_total = blue_at_c + blue_exi.CLIENTNUM.count()
+    print(blue_exi.CLIENTNUM.count())
+    prec = (blue_at_c/blue_total).round(3)*100
+    labels = 'Attrited Customer', 'Existing Customer'
+    sizes = [prec, 100 - prec]
+
+    fig1, ax1 = plt.subplots()
+    ax1.pie(sizes, labels = labels, autopct='%1.1f%%')
+    ax1.axis('equal')
+
+    st.pyplot(fig1)
+
+card_type('Blue')
+card_type('Silver')
+card_type('Gold')
+card_type('Platinum')
