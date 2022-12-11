@@ -1,5 +1,8 @@
 import streamlit as st
 import pandas as pd
+import plotly.express as px
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 data = pd.read_csv("/Users/andrei_vasilkov/hse_dataset_project_december/BankChurners.csv")
 # print(data)
