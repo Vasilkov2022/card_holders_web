@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as px
+# import plotly.express as px
 import seaborn as sns
 import matplotlib.pyplot as plt
 
@@ -17,7 +17,7 @@ fig = plt.figure(figsize=(10, 4))
 sns.boxplot(data=data, x='Education_Level', y='Credit_Limit')
 st.pyplot(fig)
 
-fig = px.scatter(data, x="Customer_Age", y="Credit_Limit", color="Attrition_Flag",
-                 marginal_x="box", marginal_y="violin",
-                  title="example")
-st.plotly_chart(fig)
+# fig = px.scatter(data, x="Customer_Age", y="Credit_Limit", color="Attrition_Flag",
+#                  marginal_x="box", marginal_y="violin",
+#                   title="example")
+# st.plotly_chart(fig)
