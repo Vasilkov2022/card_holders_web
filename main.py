@@ -4,7 +4,7 @@ import plotly.express as px
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-data = pd.read_csv("/Users/andrei_vasilkov/hse_dataset_project_december/BankChurners.csv")
+data = pd.read_csv("BankChurners.csv")
 # print(data)
 st.title('Mid-term report')
 st.subheader('Credit cards holders analys')
