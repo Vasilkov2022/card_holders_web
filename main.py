@@ -31,7 +31,7 @@ def card_type(type_name):
     blue_at_c = blue_attrition.CLIENTNUM.count()
     blue_exi = data[(data.Attrition_Flag == 'Existing Customer') & (data.Card_Category == type_name)]
     blue_total = blue_at_c + blue_exi.CLIENTNUM.count()
-    print(blue_exi.CLIENTNUM.count())
+    # print(blue_exi.CLIENTNUM.count())
     prec = (blue_at_c/blue_total).round(3)*100
     labels = 'Attrited Customer', 'Existing Customer'
     sizes = [prec, 100 - prec]
@@ -62,7 +62,7 @@ ages = st.slider(
 a = ages[0]
 b = ages[1]
 st.write('Age:', str(ages[0]) + '-' + str(ages[1]))
-print(ages)
+# print(ages)
 
 st.bar_chart(data[(data.Attrition_Flag == 'Attrited Customer') & ((data.Customer_Age >= int(a)) & (data.Customer_Age <= int(b)))]['Marital_Status'].value_counts())
 
@@ -100,3 +100,7 @@ n_es = status('Existing Customer', 'Single')
 n_ed = status('Existing Customer', 'Divorced')
 
 piechart(n_am, n_em, 'Married')
+st.subheader('The pie chart shows the proportion of single customers, who abandoned services of bank and those, who are still its customers')
+piechart(n_as, n_es, 'Single')
+st.subheader('The pie chart shows the proportion of divorced customers, who abandoned services of bank and those, who are still its customers')
+piechart(n_ad, n_ed, 'Divorced')
