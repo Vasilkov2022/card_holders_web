@@ -1,0 +1,4 @@
+seaborn~=0.12.1
+plotly~=5.9.0
+streamlit~=1.11.0
+pandas~=1.5.2
