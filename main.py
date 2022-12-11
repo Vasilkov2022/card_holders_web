@@ -38,7 +38,7 @@ def card_type(type_name):
     fig1, ax1 = plt.subplots()
     ax1.pie(sizes, labels=labels, autopct='%1.1f%%')
     ax1.axis('equal')
-    st.pyplot.axes.set_facecolor(color=None)
+    fig1.set_facecolor(color=None)
     st.pyplot(fig1)
 
 
