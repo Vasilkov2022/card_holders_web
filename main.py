@@ -8,19 +8,19 @@ data = pd.read_csv("BankChurners.csv")
 # data.columns = ['Clients', 'Attrition_Flag', 'Customer age', 'Gender', 'Number of dependents', 'Educational Qualification', 'Martial status', 'income category', 'Card category', 'Period of relationship with bank', 'Total no. of products', 'No. of months inactive', 'No. of Contacts', 'Credit Limit', 'Total Revolving Balance', 'Open to Buy Credit Line', 'Change in Transaction Amount', 'Total Transaction Amount', 'Total Transaction Count', 'Change in Transaction Count', 'Average Card Utilization Ratio']
 # print(data)
 st.title('Mid-term report')
+st.header('The problem is that some customers of the bank refuse credit services of the bank. I have a hypothesis that people with graetest credit limit and elder people refuse bank credit servises.')
 st.subheader('Credit cards holders analys')
 st.write('Table short info')
 st.write(data.head())
-st.write('This chart shows numbers of existing customers of specific age')
+st.header('This chart shows numbers of existing customers of specific age')
 st.bar_chart(data[(data.Attrition_Flag == 'Existing Customer')]['Customer_Age'].value_counts())
 #
 # fig = plt.figure(figsize=(10, 4))
 # sns.boxplot(data=data, x='Education_Level', y='Credit_Limit')
 # st.pyplot(fig)
-
+st.header('The graph shows existing customers and attrited customers, their ages and credit limit')
 fig = px.scatter(data, x="Customer_Age", y="Credit_Limit", color="Attrition_Flag",
-                 marginal_x="box", marginal_y="violin",
-                  title="example")
+                 marginal_x="box", marginal_y="violin")
 st.plotly_chart(fig)
 
 data[['Card_Category']].value_counts()
@@ -104,3 +104,7 @@ st.subheader('The pie chart shows the proportion of single customers, who abando
 piechart(n_as, n_es, 'Single')
 st.subheader('The pie chart shows the proportion of divorced customers, who abandoned services of bank and those, who are still its customers')
 piechart(n_ad, n_ed, 'Divorced')
+
+st.header('As graphs show the age and credit limits have no effect on existing of customers. However, it is important to mention that people with platium cards refuse bank servises more often.')
+st.header('What is more, the marital status also has no effect on attrition of customers')
+st.header('In addition, analysis shows that married people hold credit cards more often than others')
