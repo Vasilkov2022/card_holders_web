@@ -108,19 +108,19 @@ piechart(n_ad, n_ed, 'Divorced')
 st.subheader('The histogram below shows a quantity of both types of costumers of the bank according their income per 12 months')
 fig = px.histogram(data, x='Income_Category', category_orders=dict(Income_Category=["Less than $40K", '$40K - $60K', "$60K - $80K", '$80K - $120K', '$120K +']))
 data = data[data['Income_Category'] != 'Unknown']
-st.pyplot(fig)
+st.plotly_chart(fig)
 
 st.subheader('The histogram below shows a quantity of existing costumers of the bank according their income per 12 months')
 inc_ex = data[data['Attrition_Flag'] == 'Existing Customer']
 fig = px.histogram(inc_ex, x='Income_Category', category_orders=dict(Income_Category=["Less than $40K", '$40K - $60K', "$60K - $80K", '$80K - $120K', '$120K +']))
 data = data[data['Income_Category'] != 'Unknown']
-st.pyplot(fig)
+st.plotly_chart(fig)
 
 st.subheader('The histogram below shows a quantity of attrited costumers of the bank according their income per 12 months')
 inc_at = data[data['Attrition_Flag'] == 'Attrited Customer']
 fig = px.histogram(inc_at, x='Income_Category', category_orders=dict(Income_Category=["Less than $40K", '$40K - $60K', "$60K - $80K", '$80K - $120K', '$120K +']))
 data = data[data['Income_Category'] != 'Unknown']
-st.pyplot(fig)
+st.plotly_chart(fig)
 
 st.subheader('Comparing this graphs, we cannot see a big difference between them all.')
 st.subheader('Now I will try to find some consequences by taking education varible.')
@@ -128,19 +128,19 @@ st.subheader('Now I will try to find some consequences by taking education varib
 st.subheader('The diagram shows results of all customers')
 data = data[data['Education_Level'] != 'Unknown']
 fig = px.histogram(data, x='Education_Level')
-st.pyplot(fig)
+st.plotly_chart(fig)
 
 st.subheader('The diagram shows results of existing customers ')
 data = data[data['Education_Level'] != 'Unknown']
 inc_ex = data[data['Attrition_Flag'] == 'Existing Customer']
 fig = px.histogram(inc_ex, x='Education_Level')
-st.pyplot(fig)
+st.plotly_chart(fig)
 
 st.subheader('The diagram shows results of attrited customers ')
 data = data[data['Education_Level'] != 'Unknown']
 inc_ex = data[data['Attrition_Flag'] == 'Attrited Customer']
 fig = px.histogram(inc_ex, x='Education_Level', category_orders=dict(Education_Level=["High School", 'Graduate', "Uneducated", 'College', 'Post-Graduate', 'Doctorate']))
-st.pyplot(fig)
+st.plotly_chart(fig)
 
 st.subheader('Graphs show that propotions are approximately equal. By the way, comparing the number of doctorate people and the number of graduated people, who refused using credit card, we can see that the second one is 5 times greater than the first group of people. Comparing the sames columns, but in the diagram of existing costumers, the proportion is equal to 7. That confirms my proposition about degree of customers.')
 st.subheader()
