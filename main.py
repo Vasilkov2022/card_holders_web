@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 data = pd.read_csv("BankChurners.csv")
 # data.columns = ['Clients', 'Attrition_Flag', 'Customer age', 'Gender', 'Number of dependents', 'Educational Qualification', 'Martial status', 'income category', 'Card category', 'Period of relationship with bank', 'Total no. of products', 'No. of months inactive', 'No. of Contacts', 'Credit Limit', 'Total Revolving Balance', 'Open to Buy Credit Line', 'Change in Transaction Amount', 'Total Transaction Amount', 'Total Transaction Count', 'Change in Transaction Count', 'Average Card Utilization Ratio']
 # print(data)
-st.title('Mid-term report')
+st.title('Credit Card Customers Prediction')
 st.header('The problem is that some customers of the bank refuse credit services of the bank. I have a hypothesis that people with graetest credit limit and elder people refuse bank credit servises.')
 st.subheader('Credit cards holders analys')
 st.write('Table short info')
