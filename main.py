@@ -143,7 +143,7 @@ fig = px.histogram(inc_ex, x='Education_Level', category_orders=dict(Education_L
 st.plotly_chart(fig)
 
 st.subheader('Graphs show that propotions are approximately equal. By the way, comparing the number of doctorate people and the number of graduated people, who refused using credit card, we can see that the second one is 5 times greater than the first group of people. Comparing the sames columns, but in the diagram of existing costumers, the proportion is equal to 7. That confirms my proposition about degree of customers.')
-st.subheader()
+st.subheader('')
 st.header('As graphs show the age and credit limits have no effect on existing of customers. However, it is important to mention that people with platium cards refuse bank servises more often.')
 st.header('What is more, the marital status also has no effect on attrition of customers')
 st.header('In addition, analysis shows that married people hold credit cards more often than others')
