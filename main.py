@@ -105,6 +105,11 @@ piechart(n_as, n_es, 'Single')
 st.subheader('The pie chart shows the proportion of divorced customers, who abandoned services of bank and those, who are still its customers')
 piechart(n_ad, n_ed, 'Divorced')
 
+st.subheader('The histogram below shows a quantity of both types of costumers of the bank according their income per 12 months')
+fig = px.histogram(data, x='Income_Category', category_orders=dict(Income_Category=["Less than $40K", '$40K - $60K', "$60K - $80K", '$80K - $120K', '$120K +']))
+data = data[data['Income_Category'] != 'Unknown']
+st.pyplot(fig)
+
 st.header('As graphs show the age and credit limits have no effect on existing of customers. However, it is important to mention that people with platium cards refuse bank servises more often.')
 st.header('What is more, the marital status also has no effect on attrition of customers')
 st.header('In addition, analysis shows that married people hold credit cards more often than others')
